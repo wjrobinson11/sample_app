@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
-gem 'sqlite3', '1.3.4'
 gem 'gravatar_image_tag'
 
 # Bundle edge Rails instead:
@@ -9,11 +8,18 @@ gem 'gravatar_image_tag'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
+  gem 'sqlite3', '1.3.4'
+end
+
+group :production do
+  #gems specifically for heroku go here
+  gem 'pg'
 end
 
 gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
 
 group :test do
+  gem 'sqlite3', '1.3.4'  
   gem 'rspec-rails', '2.6.1'
   gem 'webrat', '0.7.1'
 	gem 'spork', '0.9.0.rc8'
